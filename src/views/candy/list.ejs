@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aquecimento CRUD - Doces</title>
+</head>
+
+<body>
+  <h1>Doces</h1>
+  <a href="/doces/novo">Registrar Novo Doce</a>
+
+  <% if (candies.length === 0) { %>
+  <p>Nenhum doce encontrado.</p>
+  <% } else { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% candies.forEach((candy) => { %>
+      <tr>
+        <td>
+          <%= candy.nome %>
+        </td>
+        <td>
+          <%= candy.preco %>
+        </td>
+        <td>
+          <a href="/doces/<%= candy.id %>">Ver Detalhes</a>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <% } %>
+</body>
+
+</html>

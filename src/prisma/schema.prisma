@@ -1,0 +1,13 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+}
+
+model Candy {
+    id    Int    @id @default(autoincrement())
+    nome  String @unique
+    preco Int // preço em centavos
+}
